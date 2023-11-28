@@ -15,7 +15,6 @@ const Login = () => {
       const { data } = await axios.get(
         "https://jsonplaceholder.typicode.com/users/1"
       )
-      console.log(data)
       setUser(data)
     } catch {
       setError(true)
@@ -40,7 +39,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button disabled={!username || !password} onClick={handleClick}>
-          {loading ? "please wait" : "Login"}
+          {loading ? "Please wait" : "Login"}
         </button>
         <span
           data-testid="error"
